@@ -23,3 +23,6 @@ This project was created to practice:
 - Classes and Objects
 - Lists
 - Basic console input/output
+
+## Author
+Sude Özgül
