@@ -1,9 +1,9 @@
 public class Student {
 
-    private String studentId;
-    private String name;
-    private String department;
-    private String faculty;
+    private final String studentId;
+    private final String name;
+    private final String department;
+    private final String faculty;
 
     public Student(String studentId, String name, String department, String faculty) {
         this.studentId = studentId;
