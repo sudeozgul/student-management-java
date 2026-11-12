@@ -6,12 +6,14 @@ public class StudentManager {
     private ArrayList<Student> students = new ArrayList<>();
 
     public void loadFromFile() {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("students.txt"));
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader("students.txt"))) {
+
             String line;
 
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
+                String[] parts = line.split(",", -1);
+
                 if (parts.length == 4) {
                     Student student = new Student(
                             parts[0],
@@ -19,25 +21,32 @@ public class StudentManager {
                             parts[2],
                             parts[3]
                     );
+
                     students.add(student);
                 }
             }
-            reader.close();
+
+            System.out.println("Student records loaded successfully.");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("No saved student records found.");
+
         } catch (IOException e) {
-            
+            System.out.println("Error reading student records: " + e.getMessage());
         }
     }
 
     public void saveToFile() {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"));
-            for (Student s : students) {
-                writer.write(s.toFileString());
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter("students.txt"))) {
+
+            for (Student student : students) {
+                writer.write(student.toFileString());
                 writer.newLine();
             }
-            writer.close();
+
         } catch (IOException e) {
-            System.out.println("File write error!");
+            System.out.println("Error saving student records: " + e.getMessage());
         }
     }
 
@@ -53,10 +62,8 @@ public class StudentManager {
             return;
         }
 
-        int i = 1;
-        for (Student s : students) {
-            System.out.println(i + ". " + s.getInfo());
-            i++;
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println((i + 1) + ". " + students.get(i).getInfo());
         }
     }
 
