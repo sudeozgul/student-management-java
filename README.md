@@ -6,11 +6,12 @@ It allows users to manage student records through a menu-driven interface.
 ## Features
 
 - Add new students
-- List all students
-- Delete student records
+- List all student records
+- Delete student records by their list position
 - Store student information in a text file
 - Load saved student records when the application starts
-- Manage student data using Java classes and objects
+- Validate menu selections and student deletion input
+- Organize student data using Java classes and objects
 
 ## Technologies
 
@@ -19,6 +20,7 @@ It allows users to manage student records through a menu-driven interface.
 - ArrayList
 - File handling
 - Console input/output
+- Exception handling
 
 ## How to Run
 
@@ -32,10 +34,11 @@ It allows users to manage student records through a menu-driven interface.
 
    `java Main`
 
+On Windows, you can use the same commands in PowerShell or Command Prompt if the JDK is added to your PATH.
+
 ## Project Purpose
 
-This project was developed to practice Java programming,
-object-oriented programming concepts, and basic file operations.
+This project was developed to practice Java programming, object-oriented programming concepts, collection handling, and basic file operations.
 
 ## Author
 
