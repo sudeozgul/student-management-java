@@ -17,8 +17,16 @@ public class Main {
             System.out.println("4. Exit");
             System.out.print("Choose (1-4): ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); 
+            String input = scanner.nextLine();
+
+            int choice;
+
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number!");
+                continue;
+            }
 
             switch (choice) {
                 case 1:
@@ -44,9 +52,16 @@ public class Main {
 
                 case 3:
                     manager.listStudents();
+
                     System.out.print("Enter student number to delete: ");
-                    int index = scanner.nextInt();
-                    manager.deleteStudent(index - 1);
+                    String deleteInput = scanner.nextLine();
+
+                    try {
+                        int index = Integer.parseInt(deleteInput);
+                        manager.deleteStudent(index - 1);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please enter a valid student number!");
+                    }
                     break;
 
                 case 4:
@@ -55,7 +70,7 @@ public class Main {
                     return;
 
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid choice! Please choose between 1 and 4.");
             }
         }
     }
