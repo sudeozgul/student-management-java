@@ -1,28 +1,42 @@
 # Student Management System
 
-A simple console-based Java application to manage students.
+A console-based student management application developed using Java.
+It allows users to manage student records through a menu-driven interface.
 
 ## Features
-- Add a new student
+
+- Add new students
 - List all students
-- Delete a student
-- Simple menu-driven interface
+- Delete student records
+- Store student information in a text file
+- Load saved student records when the application starts
+- Manage student data using Java classes and objects
 
-## Technologies Used
+## Technologies
+
 - Java
-## How to Run
-1. Compile the project:
-   javac Main.java
+- Object-Oriented Programming (OOP)
+- ArrayList
+- File handling
+- Console input/output
 
-2. Run the application:
-   java Main
+## How to Run
+
+1. Clone this repository.
+2. Open the project folder in a terminal.
+3. Compile the application:
+
+   `javac Main.java`
+
+4. Run the application:
+
+   `java Main`
 
 ## Project Purpose
-This project was created to practice:
-- Object-Oriented Programming (OOP)
-- Classes and Objects
-- Lists
-- Basic console input/output
+
+This project was developed to practice Java programming,
+object-oriented programming concepts, and basic file operations.
 
 ## Author
+
 Sude Özgül
